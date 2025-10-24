@@ -21,11 +21,15 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      
+      with:
+        fetch-depth: 0  # 🔄 Obtiene todo el historial
+    
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '20'
+        cache: 'npm'
+        cache-dependency-path: generator/package-lock.json
         
     - name: Install dependencies
       run: npm ci
@@ -42,3 +46,5 @@ jobs:
         file_pattern: README.md
         commit_user_name: GitHub Action
         commit_user_email: action@github.com
+        commit_options: '--allow-empty'
+        push_options: '--force-with-lease'
