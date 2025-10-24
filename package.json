@@ -7,7 +7,8 @@
   "scripts": {
     "generate": "cd generator && npm start",
     "generate:en": "cd generator && npm run start:en",
-    "generate:es": "cd generator && npm run start:es"
+    "generate:es": "cd generator && npm run start:es",
+     "dev": "vercel dev"
   },
   "keywords": [
     "github",
@@ -24,5 +25,7 @@
     "i18next-http-backend": "^3.0.2",
     "node-fetch": "^3.3.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+     "vercel": "^28.0.0"
+  }
 }
