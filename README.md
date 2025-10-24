@@ -1,18 +1,18 @@
-# Hola, soy Denis 👋
+# Hi, I'm Denis 👋
 
-Desarrollador full-stack apasionado por la tecnología y automatización.
+Full-stack developer passionate about technology and automation.
 
-## 🌎 Seleccionar Idioma
+## 🌎 Select Language
 
-Idioma actual: Español
+Current language: English
 
 **Cambiar a:** 
-[English](https://github.com/DenisV2112/DenisV2112/actions/workflows/update-readme.yml?language=en) | 
-[Español](https://github.com/DenisV2112/DenisV2112/actions/workflows/update-readme.yml?language=es)
+[English](https://github.com/DenisV2112/actions/workflows/update-readme.yml?language=en) | 
+[Español](https://github.com/DenisV2112/actions/workflows/update-readme.yml?language=es)
 
 ---
 
-## 📊 Estadísticas
+## 📊 Statistics
 
 📊 **GitHub Stats:**
 - Repositorios: 24
@@ -27,4 +27,4 @@ Idioma actual: Español
 
 ---
 
-*✨ Este perfil se genera automáticamente*
+*✨ This profile is automatically generated*
