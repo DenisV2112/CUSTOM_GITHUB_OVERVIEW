@@ -12,6 +12,11 @@ on:
         - en
         - es
 
+# 🔒 EVITA EJECUCIONES PARALELAS
+concurrency:
+  group: update-readme
+  cancel-in-progress: false
+
 jobs:
   update-readme:
     runs-on: ubuntu-latest
@@ -39,12 +44,26 @@ jobs:
       run: node index.js ${{ github.event.inputs.language }}
       working-directory: ./generator
       
+    # 🎯 VERIFICAR CAMBIOS ANTES DE COMMIT
+    - name: Check for README changes
+      id: check_changes
+      run: |
+        if git diff --quiet README.md; then
+          echo "changes=false" >> $GITHUB_OUTPUT
+          echo "🟢 No changes detected"
+        else
+          echo "changes=true" >> $GITHUB_OUTPUT
+          echo "🔴 Changes detected in README.md"
+        fi
+      
+    # 🚀 COMMIT SOLO SI HAY CAMBIOS
     - name: Commit and Push
+      if: steps.check_changes.outputs.changes == 'true'
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
-        commit_message: " Update README in ${{ github.event.inputs.language }} language"
+        commit_message: "🌍 Update README in ${{ github.event.inputs.language }} language"
         file_pattern: README.md
         commit_user_name: GitHub Action
         commit_user_email: action@github.com
-        commit_options: '--allow-empty'
+        # ❌ REMOVER '--allow-empty'
         push_options: '--force-with-lease'
