@@ -2,13 +2,12 @@
 
 Full-stack developer passionate about technology and automation.
 
-## 🌎 Select Language
+## 🌎 🌎 Select Language
 
-Current language: English
+**One-click language change:**
+[![Change Language](https://img.shields.io/badge/🌎_Change_Language-Click_Here-purple?style=for-the-badge)](https://denisv2112.github.io/CUSTOM_GITHUB_OVERVIEW/selector.html)
 
-**Cambiar a:** 
-[English](https://github.com/DenisV2112/actions/workflows/update-readme.yml?language=en) | 
-[Español](https://github.com/DenisV2112/actions/workflows/update-readme.yml?language=es)
+*Works for all visitors - no GitHub account needed!*
 
 ---
 
@@ -16,7 +15,7 @@ Current language: English
 
 📊 **GitHub Stats:**
 - Repositorios: 24
-- Seguidores: 0
+- Seguidores: 1
 - Siguiendo: 0
 - Estrellas: 0
 
