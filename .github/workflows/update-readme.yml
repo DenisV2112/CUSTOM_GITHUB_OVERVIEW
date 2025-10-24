@@ -45,6 +45,11 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+        # Sincronizar con los cambios remotos
+        git fetch origin
+        git rebase origin/main
+        # Hacer los cambios
         git add README.md
         git diff --staged --quiet || git commit -m "🌍 Update README in ${{ github.event.inputs.language }} language"
-        git push https://x-access-token:$GITHUB_TOKEN@github.com/${{ github.repository }}.git HEAD:main
+        # Forzar push si es necesario (solo para este repositorio específico)
+        git push https://x-access-token:$GITHUB_TOKEN@github.com/${{ github.repository }}.git HEAD:main --force-with-lease
