@@ -1,9 +1,7 @@
 name: Update README with Language
 
 on:
-  schedule:
-    - cron: '0 0 * * *'  # Cada día a medianoche UTC
-  
+  # 🎌 EJECUCIÓN MANUAL DESDE UI
   workflow_dispatch:
     inputs:
       language:
@@ -14,6 +12,14 @@ on:
         options:
         - en
         - es
+
+  # 🚀 EJECUCIÓN AUTOMÁTICA VIA API
+  repository_dispatch:
+    types: [language-change]
+
+  # 🕒 EJECUCIÓN PROGRAMADA
+  schedule:
+    - cron: '0 0 * * *'
 
 jobs:
   update-readme:
@@ -38,14 +44,27 @@ jobs:
       run: npm ci
       working-directory: ./generator
       
+    - name: Determine language
+      id: set-lang
+      run: |
+        # Prioridad: repository_dispatch > workflow_dispatch > default
+        if [ "${{ github.event.action }}" = "language-change" ]; then
+          echo "LANG=${{ github.event.client_payload.language || 'es' }}" >> $GITHUB_ENV
+        elif [ "${{ github.event.inputs.language }}" != "" ]; then
+          echo "LANG=${{ github.event.inputs.language }}" >> $GITHUB_ENV
+        else
+          echo "LANG=es" >> $GITHUB_ENV
+        fi
+        echo "Using language: $LANG"
+      
     - name: Update README
-      run: node index.js ${{ github.event.inputs.language }}
+      run: node index.js $LANG
       working-directory: ./generator
       
     - name: Commit and Push
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
-        commit_message: "🌍 Update README in ${{ github.event.inputs.language }} language"
+        commit_message: "🌍 Update README in $LANG language"
         file_pattern: README.md
         commit_user_name: GitHub Action
         commit_user_email: action@github.com

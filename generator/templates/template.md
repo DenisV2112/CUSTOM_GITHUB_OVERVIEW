@@ -2,13 +2,12 @@
 
 {{description}}
 
-## {{language_selector}}
+## 🌎 {{language_selector}}
 
-{{current_language}}
+**One-click language change:**
+[![Change Language](https://img.shields.io/badge/🌎_Change_Language-Click_Here-purple?style=for-the-badge)](https://denisv2112.github.io/CUSTOM_GITHUB_OVERVIEW/selector.html)
 
-**Cambiar a:** 
-[{{switch_to_english}}](https://github.com/DenisV2112/actions/workflows/update-readme.yml?language=en) | 
-[{{switch_to_spanish}}](https://github.com/DenisV2112/actions/workflows/update-readme.yml?language=es)
+*Works for all visitors - no GitHub account needed!*
 
 ---
 
