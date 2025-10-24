@@ -1,7 +1,13 @@
 {
   "name": "Hola, soy Denis 👋",
   "description": "Desarrollador full-stack apasionado por la tecnología y automatización.",
-  "language_selector": "🌎 **Idioma/Language**",
-  "switch_to_english": "Cambiar a English",
-  "switch_to_spanish": "Cambiar a Español"
+  "language_selector": "🌎 Seleccionar Idioma",
+  "switch_to_english": "English",
+  "switch_to_spanish": "Español",
+  "current_language": "Idioma actual: Español",
+  "stats": "Estadísticas",
+  "skills": "Habilidades Técnicas",
+  "projects": "Proyectos Destacados",
+  "contact": "Contacto",
+  "generated_message": "Este perfil se genera automáticamente"
 }

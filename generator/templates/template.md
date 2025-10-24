@@ -2,11 +2,17 @@
 
 {{description}}
 
-## {{languageSelector}}
+## {{language_selector}}
+
+{{current_language}}
+
+**Cambiar a:** 
+[{{switch_to_english}}](https://github.com/DenisV2112/DenisV2112/actions/workflows/update-readme.yml?language=en) | 
+[{{switch_to_spanish}}](https://github.com/DenisV2112/DenisV2112/actions/workflows/update-readme.yml?language=es)
 
 ---
 
-## 📊 Estadísticas
+## 📊 {{stats}}
 
 {{githubStats}}
 
@@ -14,4 +20,4 @@
 
 ---
 
-✨ *Este perfil se genera automáticamente*
+*✨ {{generated_message}}*

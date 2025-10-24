@@ -1,6 +1,9 @@
 name: Update README with Language
 
 on:
+  schedule:
+    - cron: '0 0 * * *'  # Cada día a medianoche UTC
+  
   workflow_dispatch:
     inputs:
       language:
@@ -39,7 +42,6 @@ jobs:
       run: node index.js ${{ github.event.inputs.language }}
       working-directory: ./generator
       
-    # ✅ ESTA ES LA PARTE CRÍTICA QUE RESUELVE EL PROBLEMA
     - name: Commit and Push
       uses: stefanzweifel/git-auto-commit-action@v5
       with:

@@ -65,10 +65,14 @@ function generateLanguageSelector(currentLang) {
 const readme = template
   .replace(/{{name}}/g, t("name"))
   .replace(/{{description}}/g, t("description"))
+  .replace(/{{language_selector}}/g, t("language_selector"))
+  .replace(/{{current_language}}/g, t("current_language"))
+  .replace(/{{switch_to_english}}/g, t("switch_to_english"))
+  .replace(/{{switch_to_spanish}}/g, t("switch_to_spanish"))
+  .replace(/{{stats}}/g, t("stats"))
   .replace(/{{githubStats}}/g, stats.github)
   .replace(/{{codewarsStats}}/g, stats.codewars)
-  .replace(/{{languageSelector}}/g, generateLanguageSelector(lang));
-
+  .replace(/{{generated_message}}/g, t("generated_message"));
 // Sobrescribir el README.md principal
 fs.writeFileSync(path.join(__dirname, "..", "README.md"), readme, "utf8");
 
