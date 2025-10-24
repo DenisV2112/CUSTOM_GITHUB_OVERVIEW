@@ -1,0 +1,28 @@
+{
+  "name": "custom_github_profile",
+  "version": "1.0.0",
+  "description": "Dynamic multilingual GitHub README generator with i18next",
+  "type": "module",
+  "main": "generator/index.js",
+  "scripts": {
+    "generate": "cd generator && npm start",
+    "generate:en": "cd generator && npm run start:en",
+    "generate:es": "cd generator && npm run start:es"
+  },
+  "keywords": [
+    "github",
+    "readme",
+    "i18next",
+    "automation",
+    "profile"
+  ],
+  "author": "Denis Sánchez",
+  "license": "MIT",
+  "dependencies": {
+    "i18next": "^25.6.0",
+    "i18next-fs-backend": "^2.6.0",
+    "i18next-http-backend": "^3.0.2",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {}
+}

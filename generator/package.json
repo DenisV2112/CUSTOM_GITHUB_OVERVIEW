@@ -1,0 +1,18 @@
+{
+  "name": "github-profile-generator",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Generator for dynamic GitHub profile",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start:en": "node index.js en",
+    "start:es": "node index.js es"
+  },
+  "dependencies": {
+    "i18next": "^23.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
