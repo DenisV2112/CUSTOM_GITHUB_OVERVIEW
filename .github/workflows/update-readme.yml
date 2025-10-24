@@ -22,7 +22,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0  # 🔄 Obtiene todo el historial
+        fetch-depth: 0  
     
     - name: Setup Node.js
       uses: actions/setup-node@v4
@@ -42,7 +42,7 @@ jobs:
     - name: Commit and Push
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
-        commit_message: "🌍 Update README in ${{ github.event.inputs.language }} language"
+        commit_message: " Update README in ${{ github.event.inputs.language }} language"
         file_pattern: README.md
         commit_user_name: GitHub Action
         commit_user_email: action@github.com
