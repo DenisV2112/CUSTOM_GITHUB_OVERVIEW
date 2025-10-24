@@ -12,20 +12,16 @@ on:
         - en
         - es
 
-permissions:
-  contents: write
-
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        fetch-depth: 0
-        
+      
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
@@ -39,15 +35,10 @@ jobs:
       run: node index.js ${{ github.event.inputs.language }}
       working-directory: ./generator
       
-    - name: Commit and push changes
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        # Forzar la sincronización con el repositorio remoto
-        git fetch origin
-        git reset --hard origin/main
-        git add README.md
-        git commit -m "🌍 Update README in ${{ github.event.inputs.language }} language"
-        git push https://x-access-token:$GITHUB_TOKEN@github.com/${{ github.repository }}.git HEAD:main
+    - name: Commit and Push
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "🌍 Update README in ${{ github.event.inputs.language }} language"
+        file_pattern: README.md
+        commit_user_name: GitHub Action
+        commit_user_email: action@github.com
