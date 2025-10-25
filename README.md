@@ -1,8 +1,8 @@
-# Hi, I'm Denis 👋
+# Hola, soy Denis 👋
 
-Full-stack developer passionate about technology and automation.
+Desarrollador full-stack apasionado por la tecnología y automatización.
 
-## 🌎 🌎 Select Language
+## 🌎 🌎 Seleccionar Idioma
 
 **One-click language change:**
 [![Change Language](https://img.shields.io/badge/🌎_Change_Language-Click_Here-purple?style=for-the-badge)](https://denisv2112.github.io/CUSTOM_GITHUB_OVERVIEW/selector.html)
@@ -11,7 +11,7 @@ Full-stack developer passionate about technology and automation.
 
 ---
 
-## 📊 Statistics
+## 📊 Estadísticas
 
 📊 **GitHub Stats:**
 - Repositorios: 24
@@ -26,4 +26,4 @@ Full-stack developer passionate about technology and automation.
 
 ---
 
-*✨ This profile is automatically generated*
+*✨ Este perfil se genera automáticamente*
