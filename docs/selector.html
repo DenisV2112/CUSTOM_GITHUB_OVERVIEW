@@ -128,12 +128,16 @@
     <script>
     // URL de tu backend en Vercel - ACTUALIZA ESTA URL después del deploy
     const API_URL = 'https://custom-github-overview.vercel.app/api/change-language';
+let currentExecutionId = null;
 
 async function changeLanguage(lang) {
     document.getElementById('loading').style.display = 'block';
     document.getElementById('success').style.display = 'none';
     document.getElementById('error').style.display = 'none';
     document.getElementById('manualFallback').style.display = 'none';
+    
+    // Resetear el estado anterior
+    currentExecutionId = null;
     
     try {
         // 1. Trigger el cambio de lenguaje
@@ -150,6 +154,9 @@ async function changeLanguage(lang) {
         const result = await triggerResponse.json();
         
         if (result.success) {
+            // Guardar el ID de esta ejecución
+            currentExecutionId = result.execution_id;
+            
             document.getElementById('loading').innerHTML = 
                 '⏳ README update started! Monitoring progress...';
             
@@ -168,58 +175,65 @@ async function changeLanguage(lang) {
     }
 }
 
-    // Función de polling
-    async function pollUntilCompleted() {
-        const maxAttempts = 30; // 30 intentos máximo
-        const delay = 2000; // 2 segundos entre intentos
-        let attempts = 0;
+// Función de polling actualizada
+async function pollUntilCompleted() {
+    const maxAttempts = 30;
+    const delay = 2000;
+    let attempts = 0;
 
-        async function checkStatus() {
-            attempts++;
-            
-            try {
-                const statusResponse = await fetch(`${API_URL.replace('change-language', 'check-status')}`);
-                const status = await statusResponse.json();
-                
-                console.log('Workflow status:', status);
-                
-                if (status.is_completed) {
-                    // ¡Completado!
-                    document.getElementById('success').style.display = 'block';
-                    document.getElementById('loading').style.display = 'none';
-                    
-                    document.getElementById('success').innerHTML = 
-                        `✅ README updated successfully!<br>
-                        <small>Workflow: ${status.conclusion}</small><br>
-                        Redirecting in 2 seconds...`;
-                    
-                    setTimeout(() => {
-                        window.location.href = 'https://github.com/DenisV2112/CUSTOM_GITHUB_OVERVIEW';
-                    }, 2000);
-                    
-                    return true;
-                } else if (attempts >= maxAttempts) {
-                    // Timeout
-                    throw new Error('Timeout waiting for workflow completion');
-                } else {
-                    // Seguir esperando
-                    document.getElementById('loading').innerHTML = 
-                        `⏳ README update in progress...<br>
-                        <small>Status: ${status.status} (${attempts}/${maxAttempts})</small>`;
-                    
-                    setTimeout(checkStatus, delay);
-                }
-            } catch (error) {
-                console.error('Polling error:', error);
-                document.getElementById('error').style.display = 'block';
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('manualFallback').style.display = 'block';
-            }
-        }
+    async function checkStatus() {
+        attempts++;
         
-        // Iniciar polling
-        await checkStatus();
+        try {
+            // Incluir el execution_id en la consulta
+            const statusUrl = `${API_URL.replace('change-language', 'check-status')}?execution_id=${currentExecutionId || ''}`;
+            const statusResponse = await fetch(statusUrl);
+            const status = await statusResponse.json();
+            
+            console.log('Workflow status:', status);
+            
+            if (status.is_completed) {
+                // ¡Completado! Resetear para permitir nueva ejecución
+                currentExecutionId = null;
+                
+                document.getElementById('success').style.display = 'block';
+                document.getElementById('loading').style.display = 'none';
+                
+                document.getElementById('success').innerHTML = 
+                    `✅ README updated successfully!<br>
+                     <small>Workflow: ${status.conclusion}</small><br>
+                     Redirecting in 2 seconds...`;
+                
+                setTimeout(() => {
+                    window.location.href = 'https://github.com/DenisV2112/CUSTOM_GITHUB_OVERVIEW';
+                }, 2000);
+                
+                return true;
+            } else if (attempts >= maxAttempts) {
+                // Timeout - resetear para permitir reintento
+                currentExecutionId = null;
+                throw new Error('Timeout waiting for workflow completion');
+            } else {
+                // Seguir esperando
+                document.getElementById('loading').innerHTML = 
+                    `⏳ README update in progress...<br>
+                     <small>Status: ${status.status} (${attempts}/${maxAttempts})</small>`;
+                
+                setTimeout(checkStatus, delay);
+            }
+        } catch (error) {
+            // Resetear en caso de error
+            currentExecutionId = null;
+            console.error('Polling error:', error);
+            document.getElementById('error').style.display = 'block';
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('manualFallback').style.display = 'block';
+        }
     }
+    
+    // Iniciar polling
+    await checkStatus();
+}
     </script>
 </body>
 </html>

@@ -21,8 +21,9 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Invalid language' });
   }
 
-  try {
-    console.log(`🌍 Triggering language change to: ${language}`);
+try {
+    // Generar ID único para esta ejecución
+    const executionId = `lang-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
     
     const response = await fetch(
       'https://api.github.com/repos/DenisV2112/CUSTOM_GITHUB_OVERVIEW/dispatches',
@@ -38,19 +39,18 @@ export default async function handler(req, res) {
           client_payload: {
             language: language,
             timestamp: new Date().toISOString(),
-            source: 'web_trigger'
+            source: 'web_trigger',
+            execution_id: executionId  // ← NUEVO: ID único
           }
         })
       }
     );
 
-    console.log(`GitHub API response: ${response.status}`);
-
     if (response.status === 204) {
       res.status(200).json({ 
         success: true, 
         message: 'README update triggered successfully',
-        language: language
+        execution_id: executionId  // ← Devolver el ID al frontend
       });
     } else {
       const errorText = await response.text();
