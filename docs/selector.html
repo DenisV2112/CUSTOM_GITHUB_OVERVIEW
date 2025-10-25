@@ -177,9 +177,16 @@ async function changeLanguage(lang) {
 
 // Función de polling actualizada
 async function pollUntilCompleted() {
-    const maxAttempts = 30;
+    const maxAttempts = 40; // Aumentar intentos
     const delay = 2000;
     let attempts = 0;
+
+    // 🔄 ESPERAR INICIAL - El workflow tarda en aparecer
+    document.getElementById('loading').innerHTML = 
+        '⏳ Starting README update... (This may take 10-30 seconds)';
+
+    // Esperar 5 segundos antes del primer check
+    await new Promise(resolve => setTimeout(resolve, 5000));
 
     async function checkStatus() {
         attempts++;
@@ -188,46 +195,88 @@ async function pollUntilCompleted() {
             // Incluir el execution_id en la consulta
             const statusUrl = `${API_URL.replace('change-language', 'check-status')}?execution_id=${currentExecutionId || ''}`;
             const statusResponse = await fetch(statusUrl);
+            
+            if (!statusResponse.ok) {
+                throw new Error(`HTTP ${statusResponse.status}`);
+            }
+            
             const status = await statusResponse.json();
             
-            console.log('Workflow status:', status);
-            
-            if (status.is_completed) {
+            console.log('Workflow status:', status, 'Attempt:', attempts);
+
+            // 🎯 MEJORAR LÓGICA DE DETECCIÓN
+            if (status.status === 'completed') {
                 // ¡Completado! Resetear para permitir nueva ejecución
                 currentExecutionId = null;
                 
                 document.getElementById('success').style.display = 'block';
                 document.getElementById('loading').style.display = 'none';
                 
+                const conclusionMessage = status.conclusion === 'success' 
+                    ? '✅ README updated successfully!'
+                    : `⚠️ Workflow ${status.conclusion}`;
+                
                 document.getElementById('success').innerHTML = 
-                    `✅ README updated successfully!<br>
-                     <small>Workflow: ${status.conclusion}</small><br>
-                     Redirecting in 2 seconds...`;
+                    `${conclusionMessage}<br>
+                     <small>Updated at: ${new Date().toLocaleTimeString()}</small><br>
+                     Redirecting in 3 seconds...`;
                 
                 setTimeout(() => {
                     window.location.href = 'https://github.com/DenisV2112/CUSTOM_GITHUB_OVERVIEW';
-                }, 2000);
+                }, 3000);
                 
                 return true;
-            } else if (attempts >= maxAttempts) {
-                // Timeout - resetear para permitir reintento
-                currentExecutionId = null;
-                throw new Error('Timeout waiting for workflow completion');
-            } else {
-                // Seguir esperando
+                
+            } else if (status.status === 'in_progress' || status.status === 'queued') {
+                // ✅ WORKFLOW DETECTADO - Está en progreso
                 document.getElementById('loading').innerHTML = 
                     `⏳ README update in progress...<br>
                      <small>Status: ${status.status} (${attempts}/${maxAttempts})</small>`;
                 
-                setTimeout(checkStatus, delay);
+                if (attempts >= maxAttempts) {
+                    throw new Error('Workflow taking too long to complete');
+                } else {
+                    setTimeout(checkStatus, delay);
+                }
+                
+            } else {
+                // ⚠️ WORKFLOW NO ENCONTRADO TODAVÍA - seguir intentando
+                if (attempts <= 10) {
+                    // Primeros 10 intentos: workflow puede no estar listo aún
+                    document.getElementById('loading').innerHTML = 
+                        `⏳ Waiting for workflow to start...<br>
+                         <small>Attempt: ${attempts}/${maxAttempts} (this is normal)</small>`;
+                    setTimeout(checkStatus, delay);
+                } else if (attempts >= maxAttempts) {
+                    throw new Error('Workflow not found after multiple attempts');
+                } else {
+                    document.getElementById('loading').innerHTML = 
+                        `⏳ Still waiting for workflow...<br>
+                         <small>Attempt: ${attempts}/${maxAttempts}</small>`;
+                    setTimeout(checkStatus, delay);
+                }
             }
+            
         } catch (error) {
-            // Resetear en caso de error
-            currentExecutionId = null;
             console.error('Polling error:', error);
-            document.getElementById('error').style.display = 'block';
-            document.getElementById('loading').style.display = 'none';
-            document.getElementById('manualFallback').style.display = 'block';
+            
+            if (attempts <= 15) {
+                // Reintentar en errores temporales
+                document.getElementById('loading').innerHTML = 
+                    `⏳ Temporary error, retrying...<br>
+                     <small>${error.message} (${attempts}/${maxAttempts})</small>`;
+                setTimeout(checkStatus, delay);
+            } else {
+                // Error persistente
+                currentExecutionId = null;
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('manualFallback').style.display = 'block';
+                
+                document.getElementById('error').innerHTML = 
+                    `❌ Error: ${error.message}<br>
+                     <small>The workflow may have started - check manually below</small>`;
+            }
         }
     }
     
