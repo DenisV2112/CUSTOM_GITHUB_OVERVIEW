@@ -1,288 +1,498 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Change README Language</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change README Language - Denis</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌎</text></svg>">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-gradient);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
+            line-height: 1.6;
         }
+
         .container {
-            background: rgba(255,255,255,0.95);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             text-align: center;
             max-width: 500px;
             width: 100%;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        h1 { 
-            color: #333; 
-            margin-bottom: 10px;
-            font-size: 2.5em;
+
+        .header {
+            margin-bottom: 2rem;
         }
-        .flags {
+
+        .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        h1 {
+            color: var(--text-primary);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .flags-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin: 30px 0;
+            gap: 1rem;
+            margin: 2.5rem 0;
         }
+
         .flag-btn {
             background: white;
-            border: 3px solid #e1e5e9;
-            border-radius: 15px;
-            padding: 25px 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 2rem 1rem;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1.3em;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1.1rem;
             font-weight: 600;
+            color: var(--text-primary);
+            position: relative;
+            overflow: hidden;
         }
+
+        .flag-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .flag-btn:hover::before {
+            left: 100%;
+        }
+
         .flag-btn:hover {
-            border-color: #4CAF50;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(76, 175, 80, 0.2);
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
         }
-        .flag-btn.en:hover { border-color: #2196F3; }
-        .flag-btn.es:hover { border-color: #f44336; }
+
+        .flag-btn:active {
+            transform: translateY(-2px);
+        }
+
+        .flag-btn.en:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+        }
+
+        .flag-btn.es:hover {
+            border-color: #ef4444;
+            box-shadow: 0 20px 40px rgba(239, 68, 68, 0.15);
+        }
+
+        .flag-emoji {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        .flag-name {
+            display: block;
+            font-size: 1rem;
+        }
+
+        .status-container {
+            margin: 2rem 0;
+        }
+
+        .status {
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            display: none;
+            animation: fadeIn 0.3s ease-in;
+        }
+
         .loading {
-            display: none;
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 20px 0;
-            color: #856404;
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            color: #92400e;
         }
+
         .success {
-            display: none;
-            background: #d4edda;
-            border: 1px solid #c3e6cb;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 20px 0;
-            color: #155724;
+            background: #ecfdf5;
+            border: 1px solid #d1fae5;
+            color: #065f46;
         }
+
         .error {
-            display: none;
-            background: #f8d7da;
-            border: 1px solid #f5c6cb;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 20px 0;
-            color: #721c24;
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #991b1b;
         }
-        .emoji { font-size: 2.5em; display: block; margin-bottom: 10px; }
+
+        .status-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #e5e7eb;
+            border-radius: 3px;
+            margin: 1rem 0;
+            overflow: hidden;
+            display: none;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 3px;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
         .manual-fallback {
             display: none;
-            margin-top: 20px;
-            padding: 15px;
-            background: #e7f3ff;
-            border-radius: 10px;
+            background: #eff6ff;
+            border: 1px solid #dbeafe;
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .manual-link {
+            color: #1d4ed8;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .manual-link:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+            
+            .flags-grid {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+            
+            .flag-btn {
+                padding: 1.5rem 1rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🌎 Change Language</h1>
-        <p style="color: #666; margin-bottom: 30px;">Select your preferred language for the README</p>
-        
-        <div class="flags">
-            <button class="flag-btn en" onclick="changeLanguage('en')">
-                <span class="emoji">🇺🇸</span>
-                English
-            </button>
-            <button class="flag-btn es" onclick="changeLanguage('es')">
-                <span class="emoji">🇪🇸</span>
-                Español
-            </button>
-        </div>
-        
-        <div id="loading" class="loading">
-    ⏳ Starting README update...
-        </div>
-        
-        <div id="success" class="success">
-            ✅ README updated successfully! Redirecting in 3 seconds...
-        </div>
-        
-        <div id="error" class="error">
-            ❌ Error updating README automatically.
+        <div class="header">
+            <span class="icon">🌎</span>
+            <h1>Change README Language</h1>
+            <p class="subtitle">Select your preferred language for Denis's GitHub profile</p>
         </div>
 
-        <div id="manualFallback" class="manual-fallback">
-            <strong>Alternative method:</strong><br>
-            <a href="https://github.com/DenisV2112/CUSTOM_GITHUB_OVERVIEW/actions/workflows/update-readme.yml" 
-               target="_blank" style="color: #0366d6;">
-               Click here to update manually via GitHub Actions
-            </a>
+        <div class="flags-grid">
+            <button class="flag-btn en" onclick="changeLanguage('en')">
+                <span class="flag-emoji">🇺🇸</span>
+                <span class="flag-name">English</span>
+            </button>
+            <button class="flag-btn es" onclick="changeLanguage('es')">
+                <span class="flag-emoji">🇪🇸</span>
+                <span class="flag-name">Español</span>
+            </button>
+        </div>
+
+        <div class="status-container">
+            <div class="progress-bar" id="progressBar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div class="status loading" id="loading">
+                <span class="status-icon pulse">⏳</span>
+                <div id="loadingMessage">Starting README update...</div>
+            </div>
+
+            <div class="status success" id="success">
+                <span class="status-icon">✅</span>
+                <div id="successMessage"></div>
+            </div>
+
+            <div class="status error" id="error">
+                <span class="status-icon">❌</span>
+                <div id="errorMessage"></div>
+            </div>
+
+            <div class="manual-fallback" id="manualFallback">
+                <strong>Alternative Method</strong><br>
+                <a href="https://github.com/DenisV2112/CUSTOM_GITHUB_OVERVIEW/actions/workflows/update-readme.yml" 
+                   class="manual-link" target="_blank">
+                   Update manually via GitHub Actions →
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>The README will be updated for all visitors within 30-60 seconds</p>
         </div>
     </div>
 
     <script>
-    // URL de tu backend en Vercel - ACTUALIZA ESTA URL después del deploy
-    const API_URL = 'https://custom-github-overview.vercel.app/api/change-language';
-let currentExecutionId = null;
+        // URL de tu backend en Vercel - ACTUALIZA ESTA URL
+        const API_URL = 'https://tu-app.vercel.app/api/change-language';
+        let currentExecutionId = null;
 
-async function changeLanguage(lang) {
-    document.getElementById('loading').style.display = 'block';
-    document.getElementById('success').style.display = 'none';
-    document.getElementById('error').style.display = 'none';
-    document.getElementById('manualFallback').style.display = 'none';
-    
-    // Resetear el estado anterior
-    currentExecutionId = null;
-    
-    try {
-        // 1. Trigger el cambio de lenguaje
-        const triggerResponse = await fetch(API_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                language: lang
-            })
-        });
-        
-        const result = await triggerResponse.json();
-        
-        if (result.success) {
-            // Guardar el ID de esta ejecución
-            currentExecutionId = result.execution_id;
+        async function changeLanguage(lang) {
+            // Resetear estado anterior
+            resetUI();
+            currentExecutionId = null;
             
-            document.getElementById('loading').innerHTML = 
-                '⏳ README update started! Monitoring progress...';
+            // Deshabilitar botones temporalmente
+            disableButtons(true);
             
-            // 2. Iniciar polling para verificar estado
-            await pollUntilCompleted();
-            
-        } else {
-            throw new Error(result.error);
-        }
-        
-    } catch (error) {
-        console.error('Error:', error);
-        document.getElementById('error').style.display = 'block';
-        document.getElementById('loading').style.display = 'none';
-        document.getElementById('manualFallback').style.display = 'block';
-    }
-}
-
-// Función de polling actualizada
-async function pollUntilCompleted() {
-    const maxAttempts = 40; // Aumentar intentos
-    const delay = 2000;
-    let attempts = 0;
-
-    // 🔄 ESPERAR INICIAL - El workflow tarda en aparecer
-    document.getElementById('loading').innerHTML = 
-        '⏳ Starting README update... (This may take 10-30 seconds)';
-
-    // Esperar 5 segundos antes del primer check
-    await new Promise(resolve => setTimeout(resolve, 5000));
-
-    async function checkStatus() {
-        attempts++;
-        
-        try {
-            // Incluir el execution_id en la consulta
-            const statusUrl = `${API_URL.replace('change-language', 'check-status')}?execution_id=${currentExecutionId || ''}`;
-            const statusResponse = await fetch(statusUrl);
-            
-            if (!statusResponse.ok) {
-                throw new Error(`HTTP ${statusResponse.status}`);
-            }
-            
-            const status = await statusResponse.json();
-            
-            console.log('Workflow status:', status, 'Attempt:', attempts);
-
-            // 🎯 MEJORAR LÓGICA DE DETECCIÓN
-            if (status.status === 'completed') {
-                // ¡Completado! Resetear para permitir nueva ejecución
-                currentExecutionId = null;
+            try {
+                // Mostrar loading
+                showLoading('Starting README update...');
+                showProgressBar(true);
                 
-                document.getElementById('success').style.display = 'block';
-                document.getElementById('loading').style.display = 'none';
+                // 1. Trigger el cambio de lenguaje
+                const triggerResponse = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        language: lang
+                    })
+                });
                 
-                const conclusionMessage = status.conclusion === 'success' 
-                    ? '✅ README updated successfully!'
-                    : `⚠️ Workflow ${status.conclusion}`;
+                const result = await triggerResponse.json();
                 
-                document.getElementById('success').innerHTML = 
-                    `${conclusionMessage}<br>
-                     <small>Updated at: ${new Date().toLocaleTimeString()}</small><br>
-                     Redirecting in 3 seconds...`;
-                
-                setTimeout(() => {
-                    window.location.href = 'https://github.com/DenisV2112/CUSTOM_GITHUB_OVERVIEW';
-                }, 3000);
-                
-                return true;
-                
-            } else if (status.status === 'in_progress' || status.status === 'queued') {
-                // ✅ WORKFLOW DETECTADO - Está en progreso
-                document.getElementById('loading').innerHTML = 
-                    `⏳ README update in progress...<br>
-                     <small>Status: ${status.status} (${attempts}/${maxAttempts})</small>`;
-                
-                if (attempts >= maxAttempts) {
-                    throw new Error('Workflow taking too long to complete');
+                if (result.success) {
+                    // Guardar el ID de esta ejecución
+                    currentExecutionId = result.execution_id;
+                    
+                    showLoading('README update started! Monitoring progress...');
+                    updateProgress(10);
+                    
+                    // 2. Iniciar polling para verificar estado
+                    await pollUntilCompleted();
+                    
                 } else {
-                    setTimeout(checkStatus, delay);
+                    throw new Error(result.error || 'Failed to trigger update');
                 }
                 
-            } else {
-                // ⚠️ WORKFLOW NO ENCONTRADO TODAVÍA - seguir intentando
-                if (attempts <= 10) {
-                    // Primeros 10 intentos: workflow puede no estar listo aún
-                    document.getElementById('loading').innerHTML = 
-                        `⏳ Waiting for workflow to start...<br>
-                         <small>Attempt: ${attempts}/${maxAttempts} (this is normal)</small>`;
-                    setTimeout(checkStatus, delay);
-                } else if (attempts >= maxAttempts) {
-                    throw new Error('Workflow not found after multiple attempts');
-                } else {
-                    document.getElementById('loading').innerHTML = 
-                        `⏳ Still waiting for workflow...<br>
-                         <small>Attempt: ${attempts}/${maxAttempts}</small>`;
-                    setTimeout(checkStatus, delay);
+            } catch (error) {
+                console.error('Error:', error);
+                showError(`Failed to start update: ${error.message}`);
+                disableButtons(false);
+                showProgressBar(false);
+            }
+        }
+
+        async function pollUntilCompleted() {
+            const maxAttempts = 40;
+            const delay = 2000;
+            let attempts = 0;
+
+            // Esperar 3 segundos antes del primer check
+            await new Promise(resolve => setTimeout(resolve, 3000));
+
+            async function checkStatus() {
+                attempts++;
+                const progress = 10 + Math.min((attempts / maxAttempts) * 80, 80);
+                updateProgress(progress);
+                
+                try {
+                    // Incluir el execution_id en la consulta
+                    const statusUrl = `${API_URL.replace('change-language', 'check-status')}?execution_id=${currentExecutionId || ''}`;
+                    const statusResponse = await fetch(statusUrl);
+                    
+                    if (!statusResponse.ok) {
+                        throw new Error(`HTTP ${statusResponse.status}`);
+                    }
+                    
+                    const status = await statusResponse.json();
+                    
+                    console.log('Workflow status:', status, 'Attempt:', attempts);
+
+                    if (status.status === 'completed') {
+                        // ¡Completado!
+                        currentExecutionId = null;
+                        updateProgress(100);
+                        showSuccess('README updated successfully! Redirecting...');
+                        disableButtons(false);
+                        
+                        setTimeout(() => {
+                            window.location.href = 'https://github.com/DenisV2112/CUSTOM_GITHUB_OVERVIEW';
+                        }, 2000);
+                        
+                    } else if (status.status === 'in_progress' || status.status === 'queued') {
+                        // Workflow en progreso
+                        showLoading(`Updating README... (Status: ${status.status})`);
+                        
+                        if (attempts >= maxAttempts) {
+                            throw new Error('Workflow taking too long to complete');
+                        } else {
+                            setTimeout(checkStatus, delay);
+                        }
+                        
+                    } else {
+                        // Workflow no encontrado todavía
+                        if (attempts <= 8) {
+                            showLoading('Waiting for workflow to start... (this is normal)');
+                            setTimeout(checkStatus, delay);
+                        } else if (attempts >= maxAttempts) {
+                            throw new Error('Workflow not found after multiple attempts');
+                        } else {
+                            showLoading('Still waiting for workflow to appear...');
+                            setTimeout(checkStatus, delay);
+                        }
+                    }
+                    
+                } catch (error) {
+                    console.error('Polling error:', error);
+                    
+                    if (attempts <= 12) {
+                        // Reintentar en errores temporales
+                        showLoading(`Temporary error, retrying... (${error.message})`);
+                        setTimeout(checkStatus, delay);
+                    } else {
+                        // Error persistente
+                        currentExecutionId = null;
+                        showError(`Update failed: ${error.message}`);
+                        disableButtons(false);
+                        showProgressBar(false);
+                    }
                 }
             }
             
-        } catch (error) {
-            console.error('Polling error:', error);
-            
-            if (attempts <= 15) {
-                // Reintentar en errores temporales
-                document.getElementById('loading').innerHTML = 
-                    `⏳ Temporary error, retrying...<br>
-                     <small>${error.message} (${attempts}/${maxAttempts})</small>`;
-                setTimeout(checkStatus, delay);
-            } else {
-                // Error persistente
-                currentExecutionId = null;
-                document.getElementById('error').style.display = 'block';
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('manualFallback').style.display = 'block';
-                
-                document.getElementById('error').innerHTML = 
-                    `❌ Error: ${error.message}<br>
-                     <small>The workflow may have started - check manually below</small>`;
-            }
+            await checkStatus();
         }
-    }
-    
-    // Iniciar polling
-    await checkStatus();
-}
+
+        // Funciones de UI
+        function resetUI() {
+            hideAllStatus();
+            showProgressBar(false);
+            updateProgress(0);
+        }
+
+        function hideAllStatus() {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('success').style.display = 'none';
+            document.getElementById('error').style.display = 'none';
+            document.getElementById('manualFallback').style.display = 'none';
+        }
+
+        function showLoading(message) {
+            hideAllStatus();
+            const loading = document.getElementById('loading');
+            document.getElementById('loadingMessage').textContent = message;
+            loading.style.display = 'block';
+        }
+
+        function showSuccess(message) {
+            hideAllStatus();
+            const success = document.getElementById('success');
+            document.getElementById('successMessage').textContent = message;
+            success.style.display = 'block';
+        }
+
+        function showError(message) {
+            hideAllStatus();
+            const error = document.getElementById('error');
+            document.getElementById('errorMessage').textContent = message;
+            error.style.display = 'block';
+            document.getElementById('manualFallback').style.display = 'block';
+        }
+
+        function showProgressBar(show) {
+            document.getElementById('progressBar').style.display = show ? 'block' : 'none';
+        }
+
+        function updateProgress(percentage) {
+            document.getElementById('progressFill').style.width = `${percentage}%`;
+        }
+
+        function disableButtons(disabled) {
+            const buttons = document.querySelectorAll('.flag-btn');
+            buttons.forEach(btn => {
+                btn.disabled = disabled;
+                btn.style.opacity = disabled ? '0.6' : '1';
+                btn.style.cursor = disabled ? 'not-allowed' : 'pointer';
+            });
+        }
     </script>
 </body>
 </html>
