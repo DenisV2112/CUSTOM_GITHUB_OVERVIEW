@@ -5,6 +5,7 @@ import { initI18n } from "./i18n/i18n.js";
 import { fetchStats } from "./utils/fetchStats.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const now = new Date().toLocaleDateString();
 
 // ✅ NUEVO: Manejar parámetros de línea de comandos
 const args = process.argv.slice(2);
@@ -63,6 +64,8 @@ function generateLanguageSelector(currentLang) {
 
 // Reemplazar variables dentro del template
 const readme = template
+    .replace(/{{current_time}}/g, now)
+    .replace(/{{learning_interests}}/g, t("learning_interests"))
   .replace(/{{name}}/g, t("name"))
   .replace(/{{description}}/g, t("description"))
   .replace(/{{language_selector}}/g, t("language_selector"))

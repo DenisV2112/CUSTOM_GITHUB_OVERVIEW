@@ -1,13 +1,13 @@
 {
-  "name": "Hi, I'm Denis 👋",
-  "description": "Full-stack developer passionate about technology and automation.",
-  "language_selector": "🌎 Select Language", 
-  "switch_to_english": "English",
-  "switch_to_spanish": "Español",
+  "name": "Denis Sánchez",
+  "description": "Software Developer passionate about technology, problem solving, learning, teaching, AI and automation.",
+  "language_selector": "Change Language",
   "current_language": "Current language: English",
-  "stats": "Statistics",
-  "skills": "Technical Skills",
-  "projects": "Featured Projects", 
-  "contact": "Contact",
-  "generated_message": "This profile is automatically generated"
+  "about_me": "About Me",
+  "tech_stack": "Tech Stack",
+  "github_stats": "GitHub Analytics",
+  "featured_projects": "Featured Projects",
+  "currently_learning": "Currently Learning",
+  "lets_connect": "Let's Connect",
+  "learning_interests": "AI, N8n, Cybersecurity, Angular, Ruby, Biomedicine"
 }
