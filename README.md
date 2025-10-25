@@ -14,10 +14,10 @@ Full-stack developer passionate about technology and automation.
 ## 📊 Statistics
 
 📊 **GitHub Stats:**
-- Repositorios: undefined
-- Seguidores: undefined
-- Siguiendo: undefined
-- Estrellas: undefined
+- Repositorios: 24
+- Seguidores: 1
+- Siguiendo: 0
+- Estrellas: 0
 
 ⚔️ **Codewars:**
 - Rango: 5 kyu
