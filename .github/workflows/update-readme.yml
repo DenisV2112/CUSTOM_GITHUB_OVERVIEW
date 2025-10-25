@@ -1,7 +1,6 @@
 name: Update README with Language
 
 on:
-  # 🎌 EJECUCIÓN MANUAL DESDE UI
   workflow_dispatch:
     inputs:
       language:
@@ -13,11 +12,9 @@ on:
         - en
         - es
 
-  # 🚀 EJECUCIÓN AUTOMÁTICA VIA API
   repository_dispatch:
     types: [language-change]
 
-  # 🕒 EJECUCIÓN PROGRAMADA
   schedule:
     - cron: '0 0 * * *'
 
@@ -47,7 +44,6 @@ jobs:
     - name: Determine language
       id: set-lang
       run: |
-        # Prioridad: repository_dispatch > workflow_dispatch > default
         if [ "${{ github.event.action }}" = "language-change" ]; then
           echo "LANG=${{ github.event.client_payload.language || 'es' }}" >> $GITHUB_ENV
         elif [ "${{ github.event.inputs.language }}" != "" ]; then
@@ -58,6 +54,8 @@ jobs:
         echo "Using language: $LANG"
       
     - name: Update README
+      env:
+        GITHUB_TOKEN: ${{ secrets.AUTO_UPDATE_TOKEN }}
       run: node index.js $LANG
       working-directory: ./generator
       
@@ -68,3 +66,10 @@ jobs:
         file_pattern: README.md
         commit_user_name: GitHub Action
         commit_user_email: action@github.com
+        
+    - name: Create completion flag
+      if: always()
+      run: |
+        TIMESTAMP=$(date +%s)
+        echo "COMPLETION_TIME=$TIMESTAMP" >> $GITHUB_ENV
+        echo "🌍 README update completed at: $TIMESTAMP"
