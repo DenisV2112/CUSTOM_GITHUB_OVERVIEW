@@ -1,6 +1,6 @@
 <!-- Header -->
 <div align="center">
-<img width="3780" height="1890" alt="I’m a sofware developer (2)" src="https://github.com/user-attachments/assets/43886f3e-be9b-46b2-81d0-9c54beba0152" />
+<img width="3780" height="1890" alt="I’m a sofware developer (3)" src="https://github.com/user-attachments/assets/4873f82f-ec86-4ef6-a5e5-c95c34d9444f" />
 
 # 👋 Denis Sánchez
 
