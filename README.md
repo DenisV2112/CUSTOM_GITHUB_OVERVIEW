@@ -18,16 +18,28 @@
 
 <br>
 <p align="center">
-  <a href="https://www.youtube.com/UCRX2pao9vPLyVcPEQWIlUoA"><img width="32px" alt="Youtube" title="Youtube" src="https://i.imgur.com/qiXu7b2.png"/></a>
-  &#8287;&#8287;&#8287;&#8287;&#8287;
-  <a href="https://twitter.com/NezukoSocial"><img width="32px" alt="Twitter" title="Twitter" src="https://i.imgur.com/OXZM1L6.png"/></a>
-  &#8287;&#8287;&#8287;&#8287;&#8287;
-  <a href="https://discord.gg/nezuko" alt="Join our community"><img width="32px" src="https://i.imgur.com/OViZO8J.png"/></a>
-  &#8287;&#8287;&#8287;&#8287;&#8287;
-  <a href="https://dev.to/giingu"><img width="32px" alt="Dev.to" title="Giingu Dev.to" src="https://i.imgur.com/mVm29vK.png"></a>
-  &#8287;&#8287;&#8287;&#8287;&#8287;
-  <a href="https://ko-fi.com/nezukobot"><img width="32px" alt="Ko-fi" title="Buy me a coffee" src="https://i.imgur.com/PpLeD3K.png"/></a>
-  &#8287;&#8287;&#8287;&#8287;&#8287;
+  <a href="https://www.linkedin.com/in/denisanchez/" title="LinkedIn">
+    <img width="32px" style="filter: invert(100%) opacity(0.8); transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg"/>
+  </a> &#8287;
+  <a href="https://github.com/DenisV2112" title="GitHub">
+    <img width="32px" style="filter: invert(100%) opacity(0.8); transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg"/>
+  </a> &#8287;
+  <a href="https://www.codewars.com/users/DenisV2103" title="CodeWars">
+    <img width="32px" style="filter: invert(100%) opacity(0.8); transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/codewars.svg"/>
+  </a> &#8287;
+  <a href="https://stackoverflow.com/users/your-profile" title="Stack Overflow">
+    <img width="32px" style="filter: invert(100%) opacity(0.8); transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/stackoverflow.svg"/>
+  </a> &#8287;
+  <a href="https://dev.to/giingu" title="Dev.to">
+    <img width="32px" style="filter: invert(100%) opacity(0.8); transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/devdotto.svg"/>
+  </a> &#8287;
+  <a href="https://discord.gg/nezuko" title="Discord">
+    <img width="32px" style="filter: invert(100%) opacity(0.8); transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/discord.svg"/>
+  </a> &#8287;
+  <a href="https://medium.com/@tu-usuario" title="Medium">
+    <img width="32px" style="filter: invert(100%) opacity(0.8); transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/medium.svg"/>
+  </a>
+</p>
 </div>
 <br>
 
