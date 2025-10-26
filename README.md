@@ -3,13 +3,13 @@
     <td width="50%" align="left">
       <a href="https://custom-github-overview.vercel.app/docs/selector.html" alt="Change language">
         <img width="22px" src="https://img.icons8.com/color/48/000000/globe.png" style="vertical-align: middle;"/>
-        <span style="vertical-align: middle;"><b>{{current_language}}</b></span>
+        <span style="vertical-align: middle;"><b>English</b></span>
       </a>
       <br/>
-      <sub><i>{{change_language_text}}</i></sub>
+      <sub><i>Click the globe to change language</i></sub>
     </td>
     <td width="50%" align="right">
-      <sub><i>{{dynamic_update}}</i></sub>
+      <sub><i>✨ This page updates dynamically with GitHub Action</i></sub>
     </td>
   </tr>
 </table>
@@ -32,35 +32,39 @@
 <br>
 
 <p>
-{{hi_i_am}} <b>Denis</b> {{description}}
+Hi, I am <b>Denis</b> an enthusiastic and ambitious software developer. I specialise in Web Development, React JavaScript and Design. I love to network, to learn, to teach, to solve problems and a consider an automation enthusiast.
+
+I love tackling complex challenges, building scalable solution, and sharing knowledge with someone else.
+
+Also a like to exploring and learn about the space, black holes, fisic, quantyc and any interesting things.
 </p>
 
 <div>
 <details>
-  <summary> {{more_about_me}} </summary>
+  <summary> More about me </summary>
 
-- {{currently_building}}
+- I'm currently on a journey to build **great** things.
 
-- {{currently_learning}}
+- I'm currently learning **everything**
 
-- {{discord_project}}
+- I also created a discord channel, addicionally of that a documentation page to help Riwi's coders understanding programming fundamentals at [noLearn](https://nolearn-dev.web.app/)
 
-- {{experience}}
+- All of my programming experience are available at [Linkedin](https://www.linkedin.com/in/denisanchez/)
 
-- {{contact}}
+- Reach me out at **contact.denis.sanchez@gmail.com**
 
 </details>
   
 </p>
 
-## {{github_stats}}
+## 🔥 Github Stats
 
 <img align="right" width="41%" src="./assets/img/b4beb746b9ee616660a2f247dbfb5288.jpg" />
   <a href="https://github.com/DenisV2112"><img width="50%" src="https://github-readme-streak-stats.herokuapp.com/?user=DenisV2112&theme=dark&date_format=M%20j%5B,%20Y%5D&ring=ff3068&fire=ff3068&sideNums=ff3068"></a>
   <a href="https://github.com/DenisV2112"><img width="50%" src="https://github-readme-stats.vercel.app/api?username=DenisV2112&theme=dark&sideNums=ff3068"></a>
   <a href="https://github.com/DenisV2112"><img width="50%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=DenisV2112&layout=compact&theme=dark"></a>
 
-## {{codewars_stats}}
+## CodeWars Stats
  
 <table>
   <tr>
@@ -81,15 +85,15 @@
 
 ---
 
-## {{software_skills}}
+## Technologies & Tools
 <p align="center">
   <img src="https://skillicons.dev/icons?i=cs,dotnet,docker,js,html,css,vue,python,wordpress,mysql,mongodb,postgres,git,github,typescript,electron,vite,redux,githubactions,prisma," />
 </p>
 
-## {{thanks}}
+## Thanks for visiting my profile
 
-{{quote}}
+⭐ **"The capacity to learn is a gift; the ability to learn is a skill; the willingness to learn is a choice." - Brian Herbert**
 
 <div align="right">
-<sub><i>{{last_updated}}: <b>10/26/2025</b></i></sub>
+<sub><i>Last updated at: <b>10/26/2025</b></i></sub>
 </div>  
