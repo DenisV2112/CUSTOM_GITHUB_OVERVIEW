@@ -1,29 +1,107 @@
-# Hola, soy Denis 👋
+<table width="100%">
+  <tr>
+    <td width="50%" align="left">
+  <a href="https://custom-github-overview.vercel.app/selector.html" alt="Change language">
+  <img width="22px" src="https://img.icons8.com/color/48/000000/globe.png" style="vertical-align: middle;"/>
+  <span style="vertical-align: middle;"><b>{{current_language}}</b></span>
+</a>
+      <br/>
+      <sub><i>Click the globe to change language</i></sub>
+    </td>
+    <td width="50%" align="right">
+      <sub><i>✨ This page updates dynamically with GitHub Action</i></sub>
+    </td>
+  </tr>
+</table>
 
-Desarrollador full-stack apasionado por la tecnología y automatización.
 
-## 🌎 🌎 Seleccionar Idioma
 
-**One-click language change:**
-[![Change Language](https://img.shields.io/badge/🌎_Change_Language-Click_Here-purple?style=for-the-badge)](https://denisv2112.github.io/CUSTOM_GITHUB_OVERVIEW/selector.html)
 
-*Works for all visitors - no GitHub account needed!*
+<div align="center"><img alt="I’m a sofware developer (3)" src="https://github.com/user-attachments/assets/4873f82f-ec86-4ef6-a5e5-c95c34d9444f" />
+
+<br>
+<p align="center">
+  <a href="https://www.youtube.com/UCRX2pao9vPLyVcPEQWIlUoA"><img width="32px" alt="Youtube" title="Youtube" src="https://i.imgur.com/qiXu7b2.png"/></a>
+  &#8287;&#8287;&#8287;&#8287;&#8287;
+  <a href="https://twitter.com/NezukoSocial"><img width="32px" alt="Twitter" title="Twitter" src="https://i.imgur.com/OXZM1L6.png"/></a>
+  &#8287;&#8287;&#8287;&#8287;&#8287;
+  <a href="https://discord.gg/nezuko" alt="Join our community"><img width="32px" src="https://i.imgur.com/OViZO8J.png"/></a>
+  &#8287;&#8287;&#8287;&#8287;&#8287;
+  <a href="https://dev.to/giingu"><img width="32px" alt="Dev.to" title="Giingu Dev.to" src="https://i.imgur.com/mVm29vK.png"></a>
+  &#8287;&#8287;&#8287;&#8287;&#8287;
+  <a href="https://ko-fi.com/nezukobot"><img width="32px" alt="Ko-fi" title="Buy me a coffee" src="https://i.imgur.com/PpLeD3K.png"/></a>
+  &#8287;&#8287;&#8287;&#8287;&#8287;
+</div>
+<br>
+<p>
+Hi , I am <b>Denis</b> an enthusiastic and ambitious sofware developer. I specialise in Web Development, React JavaScript and Design. I love to network, to learn, to teach, to solve problems and a consider an automation enthusiast.
+
+I love tackling complex challenges, building scalable solution, and sharing knowledge with someone else.
+
+Also a like to exploring and learn about the space, black holes, fisic, quantyc and any interesting things.
+
+<div>
+<details>
+  <summary> More about me</summary>
+
+- I’m currently on a journey to build **great** things.
+
+- I’m currently learning **everything** 
+
+- I also created a discord channel, addicionally of that a documentation page to help Riwi's coders understanding programming fundamentals at [noLearn](https://nolearn-dev.web.app/)
+
+-  All of my programming experience are available at [Linkedin](https://www.linkedin.com/in/denisanchez/)
+
+-  Reach me out at **contact.denis.sanchez@gmail.com**
+
+</details>
+  
+</p>
+  
+
+## 🔥 Github Stats
+
+<img align="right" width="41%" src="./assets/img/b4beb746b9ee616660a2f247dbfb5288.jpg" />
+  <a href="https://github.com/DenisV2112"><img width="50%" src="https://github-readme-streak-stats.herokuapp.com/?user=DenisV2112&theme=dark&date_format=M%20j%5B,%20Y%5D&ring=ff3068&fire=ff3068&sideNums=ff3068"></a>
+  <a href="https://github.com/DenisV2112"><img width="50%" src="https://github-readme-stats.vercel.app/api?username=DenisV2112&theme=dark&sideNums=ff3068"></a>
+  <a href="https://github.com/DenisV2112"><img width="50%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=DenisV2112&layout=compact&theme=dark"></a>
+
+## CodeWars Stats 
+ 
+<table>
+  <tr>
+    <td width="41%" align="center">
+      <img src="./assets/img/codewars.jpeg" />
+    </td>
+    <td width="55%">
+      <a href="https://www.codewars.com/users/DenisV2103">
+        <img width="100%" src="https://www.codewars.com/users/DenisV2103/badges/large">
+      </a>
+      <br>
+      <br>
+      <br>
+      <a href="https://www.codewars.com/users/DenisV2103">
+        <img width="100%" src="https://github-readme-stats.vercel.app/api?username=DenisV2112&show_icons=true&theme=dark&title_color=ff3068&icon_color=ff3068&text_color=ffffff&bg_color=000000&hide_border=true">
+      </a>
+      <a href="https://www.codewars.com/users/DenisV2103">
+        <img width="100%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=DenisV2112&layout=compact&theme=dark&title_color=ff3068&text_color=ffffff&bg_color=000000&hide_border=true">
+      </a>
+    </td>
+  </tr>
+</table>
 
 ---
 
-## 📊 Estadísticas
+## {{software_skills}}
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=cs,dotnet,docker,js,html,css,vue,python,wordpress,mysql,mongodb,postgres,git,github,typescript,electron,vite,redux,githubactions,prisma," />
+</p>
 
-📊 **GitHub Stats:**
-- Repositorios: 24
-- Seguidores: 1
-- Siguiendo: 0
-- Estrellas: 0
 
-⚔️ **Codewars:**
-- Rango: 5 kyu
-- Honor: 310
-- Kata Completados: 78
+## Thanks for visiting my profile
 
----
+⭐<b><i>"The capacity to learn is a gift; the ability to learn is a skill; the willingness to learn is a choice." - Brian Herbert</b>
+<div align="right">
+<sub><i>Last updated at: <b>{{last_updated}}</b></i></sub>
 
-*✨ Este perfil se genera automáticamente*
+</div>

@@ -1,13 +1,20 @@
 {
-  "name": "Denis Sánchez",
-  "description": "Software Developer passionate about technology, problem solving, learning, teaching, AI and automation.",
-  "language_selector": "Change Language",
-  "current_language": "Current language: English",
-  "about_me": "About Me",
-  "tech_stack": "Tech Stack",
-  "github_stats": "GitHub Analytics",
-  "featured_projects": "Featured Projects",
-  "currently_learning": "Currently Learning",
-  "lets_connect": "Let's Connect",
-  "learning_interests": "AI, N8n, Cybersecurity, Angular, Ruby, Biomedicine"
+ 
+    "current_language": "English",
+    "change_language_text": "Click the globe to change language",
+    "dynamic_update": "✨ This page updates dynamically with GitHub Action",
+    "hi_i_am": "Hi, I am",
+    "description": "an enthusiastic and ambitious software developer. I specialise in Web Development, React JavaScript and Design. I love to network, to learn, to teach, to solve problems and a consider an automation enthusiast.\n\nI love tackling complex challenges, building scalable solution, and sharing knowledge with someone else.\n\nAlso a like to exploring and learn about the space, black holes, fisic, quantyc and any interesting things.",
+    "more_about_me": "More about me",
+    "currently_building": "I'm currently on a journey to build **great** things.",
+    "currently_learning": "I'm currently learning **everything**",
+    "discord_project": "I also created a discord channel, addicionally of that a documentation page to help Riwi's coders understanding programming fundamentals at [noLearn](https://nolearn-dev.web.app/)",
+    "experience": "All of my programming experience are available at [Linkedin](https://www.linkedin.com/in/denisanchez/)",
+    "contact": "Reach me out at **contact.denis.sanchez@gmail.com**",
+    "github_stats": "🔥 Github Stats",
+    "codewars_stats": "CodeWars Stats",
+    "software_skills": "🛠️ Technologies & Tools",
+    "thanks": "Thanks for visiting my profile",
+    "quote": "⭐ **\"The capacity to learn is a gift; the ability to learn is a skill; the willingness to learn is a choice.\" - Brian Herbert**",
+    "last_updated": "Last updated at"
 }
