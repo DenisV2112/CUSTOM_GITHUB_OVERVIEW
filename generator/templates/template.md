@@ -1,7 +1,7 @@
 <table width="100%">
   <tr>
     <td width="50%" align="left">
-      <a href="https://custom-github-overview.vercel.app/selector.html" alt="Change language">
+      <a href="https://custom-github-overview.vercel.app/docs/selector.html" alt="Change language">
         <img width="22px" src="https://img.icons8.com/color/48/000000/globe.png" style="vertical-align: middle;"/>
         <span style="vertical-align: middle;"><b>{{current_language}}</b></span>
       </a>
