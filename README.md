@@ -19,7 +19,7 @@
 
 ## 🎯 {{about_me}}
 
-Software Developer passionate about technology, problem solving, learning, teaching, AI and automation.
+Desarrollador de Software apasionado por la tecnología, resolución de problemas, aprendizaje, enseñanza, IA y automatización.
 
 I love tackling complex challenges, building scalable solutions, and sharing knowledge with the community. Always exploring the intersection of technology and innovation!
 
@@ -136,14 +136,14 @@ I love tackling complex challenges, building scalable solutions, and sharing kno
 
 <div align="center">
 
-### Change Language
+### Cambiar Idioma
 
 <a href="https://custom-github-overview.vercel.app/selector.html" alt="Change language">
   <img width="32px" src="https://img.icons8.com/color/48/000000/globe.png"/>
 </a>
 &#8287;&#8287;&#8287;&#8287;&#8287;
 
-**Current language: English**
+**Idioma actual: Español**
 
 *Click the globe to change language instantly*
 
@@ -155,7 +155,7 @@ I love tackling complex challenges, building scalable solutions, and sharing kno
 
 <div align="center">
 
-**AI, N8n, Cybersecurity, Angular, Ruby, Biomedicine**
+**IA, N8n, Ciberseguridad, Angular, Ruby, Biomedicina**
 
 *Exploring the frontiers of technology and science*
 
@@ -181,6 +181,6 @@ I love tackling complex challenges, building scalable solutions, and sharing kno
 
 ⭐ *"The capacity to learn is a gift; the ability to learn is a skill; the willingness to learn is a choice." - Brian Herbert*
 
-**Last updated:** 10/25/2025
+**Last updated:** 26/10/2025
 
 </div>
