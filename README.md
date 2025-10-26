@@ -67,15 +67,18 @@ Also a like to exploring and learn about the space, black holes, fisic, quantyc 
   <a href="https://github.com/DenisV2112"><img width="50%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=DenisV2112&layout=compact&theme=dark"></a>
 
 ## CodeWars Stats
+ <div align="center" style="display: flex; gap: 20px; align-items: flex-start;">
+  <img width="41%" src="./assets/img/codewars.jpeg"/>
   
-<img width="41%" src="./assets/img/codewars.jpeg"/>
-  <a href="https://www.codewars.com/users/DenisV2103">
-  <img align="right" width="50%"  src="https://www.codewars.com/users/DenisV2103/badges/large">
-  </a>
-  <a href="https://www.codewars.com/users/DenisV2103">
-  <img align="right" width="50%" src="https://custom-github-overview.vercel.app/api/stats?username=DenisV2103&hide_border=true">
-  </a>
-
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
+    <a href="https://www.codewars.com/users/DenisV2103">
+      <img width="100%" src="https://www.codewars.com/users/DenisV2103/badges/large">
+    </a>
+    <a href="https://www.codewars.com/users/DenisV2103">
+      <img width="100%" src="https://custom-github-overview.vercel.app/api/stats?username=DenisV2103&hide_border=true">
+    </a>
+  </div>
+</div>
 ## Technologies & Tools
 <p align="center">
   <img src="https://skillicons.dev/icons?i=cs,dotnet,docker,js,html,css,vue,python,wordpress,mysql,mongodb,postgres,git,github,typescript,electron,vite,redux,githubactions,prisma," />
