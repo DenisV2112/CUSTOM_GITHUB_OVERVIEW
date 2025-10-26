@@ -67,6 +67,9 @@
 <img align="left" width="41%"  src="./assets/img/codewars.jpeg"/>
 <a href="https://www.codewars.com/users/DenisV2103">
 <br>
+<br>
+<br><br>
+<br>
 <img width="48%"  align="right"  src="https://www.codewars.com/users/DenisV2103/badges/large">
 <br>
 <br>
