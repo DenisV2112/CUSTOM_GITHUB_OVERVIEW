@@ -7,7 +7,7 @@ import { fetchStats } from "./utils/fetchStats.js";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const now = new Date().toLocaleDateString();
 
-// ✅ Manejar parámetros de línea de comandos
+// ✅ NUEVO: Manejar parámetros de línea de comandos
 const args = process.argv.slice(2);
 const langFromArgs = args[0]; // Primer argumento: 'en' o 'es'
 
@@ -19,99 +19,81 @@ const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
 function normalizeLang(lang) {
   const localeMap = {
     'en_US.UTF-8': 'en',
-    'es_ES.UTF-8': 'es',
-    'en': 'en',
-    'es': 'es'
+    'es_ES.UTF-8': 'es'
   };
   return localeMap[lang] || lang || 'es';
 }
 
-// ✅ Prioridad: argumento > variable entorno > config
+// ✅ NUEVO: Prioridad: argumento > variable entorno > config
 const rawLang = langFromArgs || process.env.LANG || config.lang;
 const lang = normalizeLang(rawLang);
 
 console.log("Selected language:", lang);
 
+// El resto del código se mantiene igual...
 // Inicializar i18n
 const t = await initI18n(lang);
 
 // Cargar plantilla
 const templatePath = path.join(__dirname, "templates", "template.md");
-let template = fs.readFileSync(templatePath, "utf8");
+const template = fs.readFileSync(templatePath, "utf8");
 
 // Obtener estadísticas dinámicas
 const stats = await fetchStats(config.githubUsername, config.codewarsUsername);
 
-// ✅ NUEVO: Función para reemplazar TODAS las variables dinámicamente
-function replaceTemplateVariables(template, translations, dynamicData = {}) {
-  let result = template;
-  
-  // Reemplazar variables de traducción {{key}}
-  Object.keys(translations).forEach(key => {
-    const value = translations[key];
-    const regex = new RegExp(`{{${key}}}`, 'g');
-    result = result.replace(regex, value);
-  });
-  
-  // Reemplazar variables dinámicas {{dynamic_key}}
-  Object.keys(dynamicData).forEach(key => {
-    const value = dynamicData[key];
-    const regex = new RegExp(`{{${key}}}`, 'g');
-    result = result.replace(regex, value);
-  });
-  
-  return result;
-}
-
-// ✅ NUEVO: Función para generar el header con selector de idioma
-function generateLanguageHeader(currentLang, githubUsername) {
+// Generar selector de idioma
+function generateLanguageSelector(currentLang) {
   const languages = {
-    'en': { flag: '🇺🇸', name: 'English' },
-    'es': { flag: '🇪🇸', name: 'Español' }
+    'en': { flag: '🇺🇸', name: 'English', param: 'en' },
+    'es': { flag: '🇪🇸', name: 'Español', param: 'es' }
   };
 
-  const currentLangInfo = languages[currentLang];
-  const otherLang = currentLang === 'en' ? 'es' : 'en';
-  const otherLangInfo = languages[otherLang];
-
-  return `
-<table width="100%">
-  <tr>
-    <td width="50%" align="left">
-      <a href="https://github.com/${githubUsername}/${githubUsername}?locale=${otherLang}" alt="Change language">
-        <img width="22px" src="https://img.icons8.com/color/48/000000/globe.png" style="vertical-align: middle;"/>
-        <span style="vertical-align: middle;"><b>${currentLangInfo.name}</b></span>
-      </a>
-      <br/>
-      <sub><i>${t('click_to_change_language')}</i></sub>
-    </td>
-    <td width="50%" align="right">
-      <sub><i>${t('dynamic_update')}</i></sub>
-    </td>
-  </tr>
-</table>
-  `.trim();
+  let selector = `## ${t('language_selector')}\n\n`;
+  
+  Object.entries(languages).forEach(([code, info]) => {
+    if (code !== currentLang) {
+      selector += `[${info.flag} ${t(code === 'en' ? 'switch_to_english' : 'switch_to_spanish')}](https://github.com/${config.githubUsername}/${config.githubUsername}?locale=${code}) | `;
+    }
+  });
+  
+  // Remover el último separador
+  selector = selector.slice(0, -3);
+  
+  return selector;
 }
 
-// ✅ NUEVO: Datos dinámicos adicionales
-const dynamicData = {
-  current_time: now,
-  githubStats: stats.github,
-  codewarsStats: stats.codewars,
-  last_updated_value: now,
-  github_username: config.githubUsername,
-  codewars_username: config.codewarsUsername
-};
-
-// ✅ NUEVO: Generar y reemplazar el header de idiomas
-const languageHeader = generateLanguageHeader(lang, config.githubUsername);
-template = template.replace('{{language_header}}', languageHeader);
-
-// ✅ NUEVO: Reemplazar TODAS las variables automáticamente
-const readme = replaceTemplateVariables(template, t, dynamicData);
+// Reemplazar variables dentro del template
+const readme = template
+    .replace(/{{current_time}}/g, now)
+    .replace(/{{learning_interests}}/g, t("learning_interests"))
+    .replace(/{{name}}/g, t("name"))
+    .replace(/{{description}}/g, t("description"))
+    .replace(/{{language_selector}}/g, t("language_selector"))
+    .replace(/{{current_language}}/g, t("current_language"))
+    .replace(/{{switch_to_english}}/g, t("switch_to_english"))
+    .replace(/{{switch_to_spanish}}/g, t("switch_to_spanish"))
+    .replace(/{{stats}}/g, t("stats"))
+    .replace(/{{githubStats}}/g, stats.github)
+    .replace(/{{codewarsStats}}/g, stats.codewars)
+    .replace(/{{generated_message}}/g, t("generated_message"))
+    .replace(/{{change_language_text}}/g, t("change_language_text"))
+    .replace(/{{dynamic_update}}/g, t("dynamic_update"))
+    .replace(/{{hi_i_am}}/g, t("hi_i_am"))
+    .replace(/{{more_about_me}}/g, t("more_about_me"))
+    .replace(/{{currently_building}}/g, t("currently_building"))
+    .replace(/{{currently_learning}}/g, t("currently_learning"))
+    .replace(/{{discord_project}}/g, t("discord_project"))
+    .replace(/{{experience}}/g, t("experience"))
+    .replace(/{{contact}}/g, t("contact"))
+    .replace(/{{github_stats}}/g, t("github_stats"))
+    .replace(/{{codewars_stats}}/g, t("codewars_stats"))
+    .replace(/{{software_skills}}/g, t("software_skills"))
+    .replace(/{{thanks}}/g, t("thanks"))
+    .replace(/{{quote}}/g, t("quote"))
+    .replace(/{{last_updated}}/g, t("last_updated"))
+    .replace(/{{last_updated_value}}/g, now);
 
 // Sobrescribir el README.md principal
 fs.writeFileSync(path.join(__dirname, "..", "README.md"), readme, "utf8");
 
 console.log(`✅ README actualizado en idioma: ${lang.toUpperCase()}`);
-console.log(`📊 Stats obtenidos: GitHub(${config.githubUsername}), CodeWars(${config.codewarsUsername})`);
