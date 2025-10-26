@@ -1,7 +1,7 @@
 {
   "current_language": "Español",
     "change_language_text": "Haz clic en el globo para cambiar el idioma",
-    "dynamic_update": "✨ Esta página se actualiza dinámicamente con GitHub Action",
+    "dynamic_update": "✨ Esta página se actualiza dinámicamente con GitHub Action y utiliza i18n para el lenguaje",
     "hi_i_am": "Hola, soy",
     "description": "un desarrollador de software entusiasta y ambicioso. Me especializo en Desarrollo Web, React JavaScript y Diseño. Me encanta hacer contactos, aprender, enseñar, resolver problemas y me considero un entusiasta de la automatización.\n\nMe encanta enfrentar desafíos complejos, construir soluciones escalables y compartir conocimientos con los demás.\n\nTambién me gusta explorar y aprender sobre el espacio, agujeros negros, física, cuántica y cualquier cosa interesante.",
     "more_about_me": "Más sobre mí",
@@ -12,7 +12,7 @@
     "contact": "Contáctame en **contact.denis.sanchez@gmail.com**",
     "github_stats": "🔥 Estadísticas de GitHub",
     "codewars_stats": "Estadísticas de CodeWars",
-    "software_skills": "Tecnologías y Herramientas",
+    "software_skills": "⚡ Conocimientos",
     "thanks": "Gracias por visitar mi perfil",
     "quote": "⭐ **\"La capacidad de aprender es un don; la habilidad de aprender es una destreza; la voluntad de aprender es una elección.\" - Brian Herbert**",
     "last_updated": "Última actualización"}
