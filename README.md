@@ -1,40 +1,34 @@
-<div align="center">
-  <p align="left" style="float: left; width: 50%;">
-    <a href="https://custom-github-overview.vercel.app/docs/selector.html" alt="Change language">
-      <img width="22px" src="https://img.icons8.com/color/48/000000/globe.png" style="vertical-align: middle;"/>
-      <span style="vertical-align: middle;"><b>English</b></span>
-    </a>
-    <br/>
-    <sub><i>Click the globe to change language</i></sub>
-  </p>
-  <p align="right" style="float: right; width: 50%;">
-    <sub><i>✨ This page updates dynamically with GitHub Action</i></sub>
-  </p>
-  <div style="clear: both;"></div>
-</div>
+<p align="left" style="float: left; width: 50%;">
+  <a href="https://custom-github-overview.vercel.app/docs/selector.html" alt="Change language">
+    <img width="22px" src="https://img.icons8.com/color/48/000000/globe.png" style="vertical-align: middle;"/>
+    <span style="vertical-align: middle;"><b>English</b></span>
+  </a>
+  <br/>
+  <sub><i>Click the globe to change language</i></sub>
+</p>
+<p align="right" style="float: right; width: 50%;">
+  <sub><i>✨ This page updates dynamically with GitHub Action</i></sub>
+</p>
+
 
 <div align="center"><img alt="I’m a sofware developer (3)" src="https://github.com/user-attachments/assets/4873f82f-ec86-4ef6-a5e5-c95c34d9444f" />
 
-<br><p align="center">
+<br>
+<p align="center">
   <a href="https://www.linkedin.com/in/denisanchez/" title="LinkedIn">
-    <img width="32px" style="filter: invert(100%);" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg"/>
-  </a> &#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;
+    <img width="32px" src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png"/>
+  </a> &#8287;&#8287;&#8287;&#8287;
   <a href="https://github.com/DenisV2112" title="GitHub">
-    <img width="32px" style="filter: invert(100%);" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg"/>
-  </a> &#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;
+    <img width="32px" src="https://cdn.simpleicons.org/github/white"/>
+  </a> &#8287;&#8287;&#8287;&#8287;
   <a href="https://www.codewars.com/users/DenisV2103" title="CodeWars">
-    <img width="32px" style="filter: invert(100%);" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/codewars.svg"/>
-  </a> &#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;
+    <img width="32px" src="https://cdn.simpleicons.org/codewars/white"/>
+  </a> &#8287;&#8287;&#8287;&#8287;
   <a href="https://stackoverflow.com/users/your-profile" title="Stack Overflow">
-    <img width="32px" style="filter: invert(100%);" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/stackoverflow.svg"/>
-  </a> &#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;  <a href="https://discord.gg/" title="Discord">
-    <img width="32px" style="filter: invert(100%);" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/discord.svg"/>
-  </a> &#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;
-   <!--  <a href="https://dev.to/giingu" title="Dev.to">
-    <img width="32px" style="filter: invert(100%);" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/devdotto.svg"/>
-  </a> &#8287; --> 
-  <!-- <a href="https://medium.com/@tu-usuario" title="Medium">
-    <img width="32px" style="filter: invert(100%);" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/medium.svg"/> -->
+    <img width="32px" src="https://cdn.simpleicons.org/stackoverflow/white"/>
+  </a> &#8287;&#8287;&#8287;&#8287;
+  <a href="https://discord.gg/" title="Discord">
+    <img width="32px" src="https://cdn.simpleicons.org/discord/white"/>
   </a>
 </p>
 </div>
@@ -63,8 +57,7 @@ Also a like to exploring and learn about the space, black holes, fisic, quantyc 
 - Reach me out at **contact.denis.sanchez@gmail.com**
 
 </details>
-  
-</p>
+</div>
 
 ## 🔥 Github Stats
 
@@ -74,21 +67,14 @@ Also a like to exploring and learn about the space, black holes, fisic, quantyc 
   <a href="https://github.com/DenisV2112"><img width="50%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=DenisV2112&layout=compact&theme=dark"></a>
 
 ## CodeWars Stats
- <div align="center" style="display: flex; gap: 20px; align-items: flex-start; justify-content: center; height: auto;">
-  <div style="flex: 41%; align-self: flex-start;">
-    <img src="./assets/img/codewars.jpeg" width="100%" />
-  </div>
-  <div style="flex: 55%; display: flex; flex-direction: column; gap: 10px;">
-    <a href="https://www.codewars.com/users/DenisV2103" style="align-self: flex-start;">
-      <img width="100%" src="https://www.codewars.com/users/DenisV2103/badges/large">
-    </a>
-    <a href="https://www.codewars.com/users/DenisV2103" style="align-self: flex-end; margin-top: auto;">
-      <img width="100%" src="https://custom-github-overview.vercel.app/api/stats?username=DenisV2103&hide_border=true">
-    </a>
-  </div>
-</div>
-
----
+  
+<img width="41%" src="./assets/img/codewars.jpeg"/>
+  <a href="https://www.codewars.com/users/DenisV2103">
+  <img align="right" width="50%"  src="https://www.codewars.com/users/DenisV2103/badges/large">
+  </a>
+  <a href="https://www.codewars.com/users/DenisV2103">
+  <img align="right" width="50%" src="https://custom-github-overview.vercel.app/api/stats?username=DenisV2103&hide_border=true">
+  </a>
 
 ## Technologies & Tools
 <p align="center">
@@ -101,4 +87,4 @@ Also a like to exploring and learn about the space, black holes, fisic, quantyc 
 
 <div align="right">
 <sub><i>Last updated at: <b>10/26/2025</b></i></sub>
-</div>  
+</div>
