@@ -4,11 +4,8 @@
 <a width="48%" href="https://custom-github-overview.vercel.app/docs/selector.html" alt="Change language">
   <img  align="left" width="22px" src="https://img.icons8.com/color/48/000000/globe.png"/>
   <b>English</b>
-<br/>
+<br/></a>
 <sub><i>Click the globe to change language</i></sub>
-
-</a>
-
 
 <br clear="both"/>
 
@@ -59,6 +56,8 @@ Also a like to exploring and learn about the space, black holes, fisic, quantyc 
 
 </details>
 </div>
+<br clear="both"/>
+
 
 ## 🔥 Github Stats
 
@@ -66,7 +65,6 @@ Also a like to exploring and learn about the space, black holes, fisic, quantyc 
 <a href="https://github.com/DenisV2112"><img width="50%" src="https://github-readme-streak-stats.herokuapp.com/?user=DenisV2112&theme=dark&date_format=M%20j%5B,%20Y%5D&ring=ff3068&fire=ff3068&sideNums=ff3068"></a>
 <a href="https://github.com/DenisV2112"><img width="50%" src="https://github-readme-stats.vercel.app/api?username=DenisV2112&theme=dark&sideNums=ff3068"></a>
 <a href="https://github.com/DenisV2112"><img width="50%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=DenisV2112&layout=compact&theme=dark"></a>
-<br clear="both"/>
 
 ## CodeWars Stats
   
