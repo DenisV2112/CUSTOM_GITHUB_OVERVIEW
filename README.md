@@ -1,15 +1,15 @@
-<p align="left" style="float: left; width: 50%;">
-  <a href="https://custom-github-overview.vercel.app/docs/selector.html" alt="Change language">
-    <img width="22px" src="https://img.icons8.com/color/48/000000/globe.png" style="vertical-align: middle;"/>
-    <span style="vertical-align: middle;"><b>English</b></span>
-  </a>
-  <br/>
-  <sub><i>Click the globe to change language</i></sub>
-</p>
-<p align="right" style="float: right; width: 50%;">
+
+<a width="48%" href="https://custom-github-overview.vercel.app/docs/selector.html" alt="Change language">
+  <img  align="left" width="22px" src="https://img.icons8.com/color/48/000000/globe.png"/>
+  <b>{{current_language}}</b>
+<br/>
+<sub><i>{{change_language_text}}</i></sub>
+</a>
+<p  width="48%" align="right">
   <sub><i>✨ This page updates dynamically with GitHub Action</i></sub>
 </p>
 
+<br clear="both"/>
 
 <div align="center"><img alt="I’m a sofware developer (3)" src="https://github.com/user-attachments/assets/4873f82f-ec86-4ef6-a5e5-c95c34d9444f" />
 
