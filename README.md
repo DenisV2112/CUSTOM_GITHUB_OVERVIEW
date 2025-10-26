@@ -1,9 +1,9 @@
 <table width="100%">
   <tr>
     <td width="50%" align="left">
-      <a href="https://custom-github-overview.vercel.app/selector.html" alt="Change language">
+      <a href="https://custom-github-overview.vercel.app/docs/selector.html" alt="Change language">
         <img width="22px" src="https://img.icons8.com/color/48/000000/globe.png" style="vertical-align: middle;"/>
-        <span style="vertical-align: middle;"><b>English</b></span>
+        <span style="vertical-align: middle;"><b>{{current_language}}</b></span>
       </a>
       <br/>
       <sub><i>{{change_language_text}}</i></sub>
@@ -32,11 +32,7 @@
 <br>
 
 <p>
-{{hi_i_am}} <b>Denis</b> an enthusiastic and ambitious software developer. I specialise in Web Development, React JavaScript and Design. I love to network, to learn, to teach, to solve problems and a consider an automation enthusiast.
-
-I love tackling complex challenges, building scalable solution, and sharing knowledge with someone else.
-
-Also a like to exploring and learn about the space, black holes, fisic, quantyc and any interesting things.
+{{hi_i_am}} <b>Denis</b> {{description}}
 </p>
 
 <div>
@@ -75,14 +71,9 @@ Also a like to exploring and learn about the space, black holes, fisic, quantyc 
       <a href="https://www.codewars.com/users/DenisV2103">
         <img width="100%" src="https://www.codewars.com/users/DenisV2103/badges/large">
       </a>
-      <br>
-      <br>
-      <br>
-      <a href="https://www.codewars.com/users/DenisV2103">
-        <img width="100%" src="https://github-readme-stats.vercel.app/api?username=DenisV2112&show_icons=true&theme=dark&title_color=ff3068&icon_color=ff3068&text_color=ffffff&bg_color=000000&hide_border=true">
       </a>
       <a href="https://www.codewars.com/users/DenisV2103">
-        <img width="100%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=DenisV2112&layout=compact&theme=dark&title_color=ff3068&text_color=ffffff&bg_color=000000&hide_border=true">
+        <img width="100%" src="https://custom-github-overview.vercel.app/api/stats?username=DenisV2103&hide_border=true">
       </a>
     </td>
   </tr>
@@ -100,5 +91,5 @@ Also a like to exploring and learn about the space, black holes, fisic, quantyc 
 {{quote}}
 
 <div align="right">
-<sub><i>{{last_updated}}: <b>{{last_updated_value}}</b></i></sub>
+<sub><i>{{last_updated}}: <b>10/26/2025</b></i></sub>
 </div>  
