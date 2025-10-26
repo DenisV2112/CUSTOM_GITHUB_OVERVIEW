@@ -71,14 +71,9 @@
       <a href="https://www.codewars.com/users/DenisV2103">
         <img width="100%" src="https://www.codewars.com/users/DenisV2103/badges/large">
       </a>
-      <br>
-      <br>
-      <br>
-      <a href="https://www.codewars.com/users/DenisV2103">
-        <img width="100%" src="https://github-readme-stats.vercel.app/api?username=DenisV2112&show_icons=true&theme=dark&title_color=ff3068&icon_color=ff3068&text_color=ffffff&bg_color=000000&hide_border=true">
       </a>
       <a href="https://www.codewars.com/users/DenisV2103">
-        <img width="100%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=DenisV2112&layout=compact&theme=dark&title_color=ff3068&text_color=ffffff&bg_color=000000&hide_border=true">
+        <img width="100%" src="https://custom-github-overview.vercel.app/api/stats?username=DenisV2103&hide_border=true">
       </a>
     </td>
   </tr>
