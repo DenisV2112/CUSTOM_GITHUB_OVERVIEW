@@ -101,7 +101,7 @@ También me gusta explorar y aprender sobre el espacio, agujeros negros, física
 
 ## Gracias por visitar mi perfil
 
-⭐ **"La capacidad de aprender es un don; la habilidad de aprender es una destreza; la voluntad de aprender es una elección." - Brian Herbert**
+### ⭐ **"La capacidad de aprender es un don; la habilidad de aprender es una destreza; la voluntad de aprender es una elección." - Brian Herbert**
 
 
 <a width="48%" href="https://custom-github-overview.vercel.app/docs/selector.html" alt="Change language">
