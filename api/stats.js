@@ -55,7 +55,7 @@ export default async function handler(req, res) {
 function generateStatsSVG(data, options) {
   const { hide_border, text_color, title_color, bg_color } = options;
   
-  const border = hide_border ? '' : 'stroke="#ff3068" stroke-width="2"';
+  const border = hide_border ? '' : 'stroke="#9c9a9aff" stroke-width="1"';
   const width = 400;
   const height = 170;
   
@@ -98,9 +98,39 @@ function generateStatsSVG(data, options) {
   <text x="20" y="120" class="stat">Katas: ${data.codeChallenges.totalCompleted}</text>
   <text x="20" y="145" class="text">Languages: ${getTopLanguages(data.ranks.languages)}</text>
   
-  <!-- Rank badge -->
-  <circle cx="350" cy="45" r="25" fill="${getRankColor(data.ranks.overall.name)}" opacity="0.2"/>
-  <text x="350" y="50" text-anchor="middle" class="rank">${getRankNumber(data.ranks.overall.name)}</text>
+  <!-- Rank badge --><!-- Rank badge mejorado -->
+<g transform="translate(350, 60)">
+  <!-- Emoji de fuego (detrás del texto) -->
+  <text 
+    x="0" 
+    y="10" 
+    text-anchor="middle" 
+    font-size="36" 
+    opacity="0.5">
+    🔥
+  </text>
+
+  <!-- Círculo con color dinámico -->
+  <circle 
+    cx="0" 
+    cy="0" 
+    r="35" 
+    fill="${getRankColor(data.ranks.overall.name)}" 
+    opacity="0.25"/>
+
+  <!-- Número o texto del rank -->
+  <text 
+    x="0" 
+    y="10" 
+    text-anchor="middle" 
+    class="rank" 
+    font-size="22" 
+    font-weight="bold" 
+    fill="#fff">
+    ${getRankNumber(data.ranks.overall.name)}
+  </text>
+</g>
+
 </svg>
   `;
 }
