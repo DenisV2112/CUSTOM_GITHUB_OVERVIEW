@@ -17,9 +17,12 @@ Action and use i18n to the language</i></sub>
   <a href="https://www.codewars.com/users/DenisV2103" title="CodeWars">
     <img width="32px" src="https://cdn.simpleicons.org/codewars/white"/>
   </a>
-  <a href="https://stackoverflow.com/users/your-profile" title="Stack Overflow">
-    <img width="32px" src="https://cdn.simpleicons.org/stackoverflow/white"/>
+    <a href="https://wa.me/573205800647" title="CodeWars">
+    <img width="32px" src="https://cdn.simpleicons.org/whatsapp/white"/>
   </a>
+  <!--<a href="https://stackoverflow.com/users/your-profile" title="Stack Overflow">
+    <img width="32px" src="https://cdn.simpleicons.org/stackoverflow/white"/>
+  </a>-->
   <a href="https://discord.gg/" title="Discord">
     <img width="32px" src="https://cdn.simpleicons.org/discord/white"/>
   </a>
@@ -63,16 +66,12 @@ Also a like to exploring and learn about the space, black holes, fisic, quantyc 
 
 ## CodeWars Stats
   
-<img align="left" width="41%"  src="./assets/img/codewars.jpeg"/>
+
 <a href="https://www.codewars.com/users/DenisV2103">
 <br>
-<br>
-<br><br>
-<br>
-<img width="48%"  align="right"  src="https://www.codewars.com/users/DenisV2103/badges/large">
-<br>
-<br>
-<img width="50%" align="right" src="https://custom-github-overview.vercel.app/api/stats?username=DenisV2103&hide_border=true">
+<img width="100%"  align="center"  src="https://www.codewars.com/users/DenisV2103/badges/large">
+<p></p>
+<img width="100%" align="center" src="https://custom-github-overview.vercel.app/api/stats?username=DenisV2103&hide_border=true">
 </a>
 
 <br clear="both"/>
@@ -101,7 +100,7 @@ Also a like to exploring and learn about the space, black holes, fisic, quantyc 
 
 ## Thanks for visiting my profile
 
-⭐ **"The capacity to learn is a gift; the ability to learn is a skill; the willingness to learn is a choice." - Brian Herbert**
+### ⭐ **"The capacity to learn is a gift; the ability to learn is a skill; the willingness to learn is a choice." - Brian Herbert**
 
 
 <a width="48%" href="https://custom-github-overview.vercel.app/docs/selector.html" alt="Change language">
