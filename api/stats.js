@@ -100,7 +100,6 @@ function generateStatsSVG(data, options) {
   
   <!-- Rank badge --><!-- Rank badge mejorado -->
 <g transform="translate(350, 60)">
-  <!-- Emoji de fuego (detrás del texto) -->
   <text 
     x="0" 
     y="10" 
@@ -175,3 +174,6 @@ function generateErrorSVG(username, error) {
 </svg>
   `;
 }
+
+
+
